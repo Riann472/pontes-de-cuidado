@@ -1,7 +1,9 @@
+import Image1 from './images/image.png'
 import { Noto_Sans } from "next/font/google";
 import Button from "./components/Button";
 import Card from "./components/Card";
 import { MoveDownRight } from "lucide-react";
+import Image from 'next/image';
 
 const notoSans = Noto_Sans({
   variable: "--font-noto-sans",
@@ -12,17 +14,24 @@ export default function Home() {
   return (
     <main>
       <section className="flex my-10 justify-between gap-12">
-        <div className={`${notoSans} w-[60vw] bg-primary p-8 rounded-tr-xl rounded-br-xl`}>
+        <div className={`${notoSans} w-[50vw] bg-primary p-8 rounded-tr-xl rounded-br-xl`}>
           <p className="text-secondary font-bold">CONHEÇA SEUS DIREITOS</p>
           <div className="flex gap-4 items-end">
-            <h1 className="text-8xl text-white font-extrabold">REDES DE APOIO EM FORTALEZA</h1>
+            <h1 className="text-8xl text-white font-extrabold scale-x-75 origin-left">REDES DE APOIO EM FORTALEZA</h1>
             <div className="flex flex-col gap-3">
               <Button className="bg-secondary text-white">SAIBA MAIS</Button>
               <Button className="bg-secondary text-white">EMERGÊNCIA</Button>
             </div>
           </div>
         </div>
-        <div className="w-full mr-10">
+        <div className="mr-10">
+          <Image
+            src={Image1}
+            alt="Imagem representando redes de apoio"
+            className="rounded-xl"
+            width={320}
+            height={200}
+          />
 
         </div>
       </section>
