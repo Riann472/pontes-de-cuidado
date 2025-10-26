@@ -9,7 +9,7 @@ interface ButtonProps {
 
 const Button = ({ children, className = "", onClick, type = "button" }: ButtonProps) => {
   return (
-    <button type={type} className={`${className} cursor-pointer px-6 py-1.5 rounded-xl`} onClick={onClick}>{children}</button>
+    <button type={type} className={`${className} cursor-pointer px-6 py-1.5 rounded-4xl`} onClick={onClick}>{children}</button>
   )
 }
 
