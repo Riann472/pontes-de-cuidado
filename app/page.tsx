@@ -1,11 +1,17 @@
+"use client"
+
 import Image1 from './images/image.png'
 import Image2 from './images/imagem1.png'
 import Image3 from './images/imagem2.png'
+import Image4 from './images/imagem3.png'
+import Image5 from './images/imagem4.png'
+import Image6 from './images/imagem5.png'
 import { Noto_Sans } from "next/font/google";
 import Button from "./components/Button";
 import Card from "./components/Card";
-import { MoveDownRight } from "lucide-react";
+import { ArrowDownRight } from "lucide-react";
 import Image from 'next/image';
+import organs from './data/organs'
 
 const notoSans = Noto_Sans({
   variable: "--font-noto-sans",
@@ -13,95 +19,78 @@ const notoSans = Noto_Sans({
 });
 
 export default function Home() {
+  const scrollToSection = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  };
   return (
     <main>
-      <section className="flex my-10 justify-between gap-12">
-        <div className={`w-[50vw] bg-primary p-8 rounded-tr-xl rounded-br-xl flex flex-col justify-center`}>
-          <p className={`text-secondary font-bold text-base`}>CONHEÇA SEUS DIREITOS</p>
-          <div className="flex items-end">
-            <h1 className="text-8xl text-white font-extrabold scale-x-75 origin-left">REDES DE APOIO EM FORTALEZA</h1>
-            <div className="flex flex-col gap-3">
-              <Button className="bg-secondary text-white">SAIBA MAIS</Button>
-              <Button className="bg-secondary text-white">EMERGÊNCIA</Button>
-            </div>
+      <section id='home' className="flex my-12 justify-between gap-12">
+        <div className={`w-[60vw] bg-primary p-8 rounded-tr-xl rounded-br-xl flex flex-col justify-center items-center`}>
+          <p className={`${notoSans.variable} text-2xl text-secondary font-bold`}>CONHEÇA SEUS DIREITOS</p>
+          <h1 className="text-8xl text-white font-extrabold scale-x-70 text-center mb-10 mt-3">REDES DE APOIO EM FORTALEZA</h1>
+          <div className="flex gap-3">
+            <Button onClick={() => scrollToSection("sobre")} className="bg-secondary text-white">SAIBA MAIS</Button>
+            <Button onClick={() => scrollToSection("emergencias")} className="bg-secondary text-white">EMERGÊNCIA</Button>
           </div>
         </div>
-        <div className="mr-10">
+        <div className="mr-24">
           <Image
             src={Image1}
             alt="Imagem representando redes de apoio"
             className="rounded-xl"
-            width={320}
+            width={500}
             height={200}
           />
 
         </div>
       </section>
-      <section className="bg-primary p-16 px-60 flex gap-8 mb-10">
+      <section id='sobre' className="z-10 relative bg-primary p-16 px-60 flex gap-12 items-center">
         <div>
           <Image
             src={Image2}
             alt="Imagem 2"
             className='rounded-xl'
-            height={550}
+            height={1000}
           />
         </div>
-        <div className="flex flex-col gap-5 text-white itens-center justify-center">
-          <MoveDownRight className="text-secondary" />
-          <h2 className="font-semibold text-5xl scale-x-75 origin-left">SOBRE O PROJETO</h2>
-          <p className="font-semibold text-xl">O Pontes de Cuidado nasceu da vontade de aproximar as pessoas dos serviços que podem transformar vidas.</p>
-          <p className="font-semibold text-xl">Muitas vezes, quem precisa de ajuda não sabe por onde começar. Nosso objetivo é tornar o acesso à informação mais simples e humano, reunindo em um só lugar as principais redes de apoio disponíveis em Fortaleza - Ce.</p>
-          <p className="text-secondary font-semibold text-xl">Acreditamos que informação também é cuidado. E que cuidar é um ato coletivo.</p>
+        <div className="flex flex-col gap-10 text-white itens-center justify-center">
+          <div>
+            <ArrowDownRight size={60} strokeWidth={3} className="text-secondary" />
+            <h2 className="mt-4 font-semibold text-5xl scale-x-75 origin-left">SOBRE O PROJETO</h2>
+          </div>
+          <p className="font-semibold text-2xl">O Pontes de Cuidado nasceu da vontade de aproximar as pessoas dos serviços que podem transformar vidas.</p>
+          <p className="font-semibold text-2xl">Muitas vezes, quem precisa de ajuda não sabe por onde começar. Nosso objetivo é tornar o acesso à informação mais simples e humano, reunindo em um só lugar as principais redes de apoio disponíveis em Fortaleza - Ce.</p>
+          <p className="text-secondary font-semibold text-2xl">Acreditamos que informação também é cuidado. E que cuidar é um ato coletivo.</p>
         </div>
 
       </section>
-      <section className="flex flex-col items-center relative">
+      <section id='orgaos' className="flex flex-col items-center relative py-12">
+        <Image
+          src={Image4}
+          alt="Espiral"
+          width={250}
+          className='absolute left-[-100px] top-[-150px] z-0 transform rotate-45'
+        />
         <h1 className={`${notoSans} font-extrabold text-3xl text-secondary mb-10`}>ORGÃOS</h1>
         <div className="flex gap-18 justify-center flex-wrap">
-          <Card
-            src="https://www2.camara.leg.br/atividade-legislativa/comissoes/comissoes-permanentes/cindra/imagens/sem.jpg.gif/image_large"
-            organ="CRAS"
-            description="Atende famílias em situação de vulnerabilidade social, oferecendo apoio, orientações, acesso a benefícios e atividades que fortalecem os vínculos familiares e comunitários."
-          />
-          <Card
-            src="https://www2.camara.leg.br/atividade-legislativa/comissoes/comissoes-permanentes/cindra/imagens/sem.jpg.gif/image_large"
-            organ="CRAS"
-            description="Atende famílias em situação de vulnerabilidade social, oferecendo apoio, orientações, acesso a benefícios e atividades que fortalecem os vínculos familiares e comunitários."
-          />
-          <Card
-            src="https://www2.camara.leg.br/atividade-legislativa/comissoes/comissoes-permanentes/cindra/imagens/sem.jpg.gif/image_large"
-            organ="CRAS"
-            description="Atende famílias em situação de vulnerabilidade social, oferecendo apoio, orientações, acesso a benefícios e atividades que fortalecem os vínculos familiares e comunitários."
-          />
-          <Card
-            src="https://www2.camara.leg.br/atividade-legislativa/comissoes/comissoes-permanentes/cindra/imagens/sem.jpg.gif/image_large"
-            organ="CRAS"
-            description="Atende famílias em situação de vulnerabilidade social, oferecendo apoio, orientações, acesso a benefícios e atividades que fortalecem os vínculos familiares e comunitários."
-          />
-          <Card
-            src="https://www2.camara.leg.br/atividade-legislativa/comissoes/comissoes-permanentes/cindra/imagens/sem.jpg.gif/image_large"
-            organ="CRAS"
-            description="Atende famílias em situação de vulnerabilidade social, oferecendo apoio, orientações, acesso a benefícios e atividades que fortalecem os vínculos familiares e comunitários."
-          />
-          <Card
-            src="https://www2.camara.leg.br/atividade-legislativa/comissoes/comissoes-permanentes/cindra/imagens/sem.jpg.gif/image_large"
-            organ="CRAS"
-            description="Atende famílias em situação de vulnerabilidade social, oferecendo apoio, orientações, acesso a benefícios e atividades que fortalecem os vínculos familiares e comunitários."
-          />
-          <Card
-            src="https://www2.camara.leg.br/atividade-legislativa/comissoes/comissoes-permanentes/cindra/imagens/sem.jpg.gif/image_large"
-            organ="CRAS"
-            description="Atende famílias em situação de vulnerabilidade social, oferecendo apoio, orientações, acesso a benefícios e atividades que fortalecem os vínculos familiares e comunitários."
-          />
-          <Card
-            src="https://www2.camara.leg.br/atividade-legislativa/comissoes/comissoes-permanentes/cindra/imagens/sem.jpg.gif/image_large"
-            organ="CRAS"
-            description="Atende famílias em situação de vulnerabilidade social, oferecendo apoio, orientações, acesso a benefícios e atividades que fortalecem os vínculos familiares e comunitários."
-          />
+          {organs?.map(organ => (
+            <Card
+              key={organ.id}
+              src={organ.image}
+              organ={organ.name}
+              description={organ.description}
+            />
+          ))}
         </div>
-      </section>
+        <Image
+          src={Image4}
+          alt="Espiral"
+          width={250}
+          className='absolute -bottom-20 right-[-100px] z-0'
+        />
 
-      <section className='bg-primary flex justify-between py-12 px-24 items-center'>
+      </section>
+      <section id='emergencias' className='relative z-10 bg-primary flex justify-between py-12 px-24 items-center'>
         <div className='ml-12 w-[30vw]'>
           <div className='w-[70%] h-full'>
             <Image
@@ -129,6 +118,38 @@ export default function Home() {
           </ul>
         </div>
       </section>
+      <section id='saibamais' className='flex py-12 items-center gap-24'>
+        <div>
+          <Image
+            src={Image5}
+            alt="Pessoa"
+            width={300}
+            className='opacity-20'
+          />
+        </div>
+        <div className='w-[70%]'>
+          <p className='text-2xl mb-8'>Este site foi desenvolvido pelos discentes integrantes do Projeto de Extensão em Responsabilidade Social do Centro Universitário Farias Brito (FB Uni), como parte das atividades voltadas à integração entre ensino, pesquisa e compromisso social.</p>
+          <p className='text-2xl'><strong>Integrantes</strong>: <br />Ana Clara Figueiredo Freire • Francisco Luiz Aguiar da Silva • Júlio César Mesquita Barreto • Lara Louise dos Santos Sales • Riann Carvalho Mota</p>
+        </div>
+      </section>
+      <footer id='footer' className='bg-tertiary py-12 flex justify-center items-center'>
+        <div className='flex justify-around items-center w-[80vw]'>
+          <div>
+            <Image
+              src={Image6}
+              alt="Logo"
+              width={220}
+            />
+          </div>
+          <div>
+            <h1 className='text-7xl font-extrabold scale-x-75 text-center'>ACESSE TAMBÉM A CARTILHA DIGITAL</h1>
+          </div>
+          <div className='flex flex-col gap-4'>
+            <Button className='bg-quartiary font-semibold py-4 w-72'>ABRIR A CARTILHA DIGITAL</Button>
+            <Button className='bg-quartiary font-semibold py-4 w-72'>AVALIE O SITE</Button>
+          </div>
+        </div>
+      </footer>
     </main>
   );
 }
