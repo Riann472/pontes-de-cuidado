@@ -64,7 +64,7 @@ export default function Home() {
         </div>
 
       </section>
-      <section id='orgaos' className="flex flex-col items-center relative py-12">
+      <section id='orgaos' className="max-w-[100vw] overflow-hidden flex flex-col items-center relative py-12">
         <Image
           src={Image4}
           alt="Espiral"
@@ -88,7 +88,6 @@ export default function Home() {
           width={250}
           className='absolute -bottom-20 right-[-100px] z-0'
         />
-
       </section>
       <section id='emergencias' className='relative z-10 bg-primary flex justify-between py-12 px-24 items-center'>
         <div className='ml-12 w-[30vw]'>
