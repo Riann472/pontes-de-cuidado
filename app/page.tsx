@@ -12,6 +12,7 @@ import Card from "./components/Card";
 import { ArrowDownRight } from "lucide-react";
 import Image from 'next/image';
 import organs from './data/organs'
+import Modal from './components/Modal';
 
 const notoSans = Noto_Sans({
   variable: "--font-noto-sans",
@@ -24,8 +25,10 @@ export default function Home() {
   };
   return (
     <main>
-      <section id='home' className="flex my-12 justify-between gap-12">
-        <div className={`w-[60vw] bg-primary p-8 rounded-tr-xl rounded-br-xl flex flex-col justify-center items-center`}>
+       <Modal />
+      <section id='home' className="flex py-12 justify-between gap-12">
+
+        <div className={`2xl:w-[60vw] xl:w-[55vw] bg-primary p-8 rounded-tr-xl rounded-br-xl flex flex-col justify-center items-center`}>
           <p className={`${notoSans.variable} text-2xl text-secondary font-bold`}>CONHEÇA SEUS DIREITOS</p>
           <h1 className="text-8xl text-white font-extrabold scale-x-70 text-center mb-10 mt-3">REDES DE APOIO EM FORTALEZA</h1>
           <div className="flex gap-3">
@@ -37,11 +40,9 @@ export default function Home() {
           <Image
             src={Image1}
             alt="Imagem representando redes de apoio"
-            className="rounded-xl"
-            width={500}
+            className="rounded-xl w-[500px]"
             height={200}
           />
-
         </div>
       </section>
       <section id='sobre' className="z-10 relative bg-primary p-16 px-60 flex gap-12 items-center">
@@ -88,6 +89,7 @@ export default function Home() {
           width={250}
           className='absolute -bottom-20 right-[-100px] z-0'
         />
+       
       </section>
       <section id='emergencias' className='relative z-10 bg-primary flex justify-between py-12 px-24 items-center'>
         <div className='ml-12 w-[30vw]'>
