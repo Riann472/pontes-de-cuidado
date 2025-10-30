@@ -8,10 +8,19 @@ import Lgbt from '../images/organs/lgbt.png'
 import Pop from '../images/organs/pop.png'
 import Ong from '../images/organs/ong.png'
 
-interface organ {
+export interface organUnity {
+    district: string
+    coordNumber: string
+    organNumber: string
+    address: string
+    mapLink: string
+}
+
+export interface organ {
     id: number
     name: string
     description: string
+    organUnitys?: organUnity[]
     image: StaticImageData
 }
 
