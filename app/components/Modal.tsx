@@ -1,31 +1,37 @@
-import caps from "../images/CRAS_teste.png"
-import Image from "next/image"
 
 const Modal = () => {
   return (
-    <div className="h-screen w-screen bg-[#000000bb] fixed z-20 flex items-center justify-center">
-      <div className="bg-white py-15 pl-10 w-200 h-200 border rounded-xl flex flex-wrap gap-13">
-        <h1 className="text-5xl ">
-          CRAS
-        </h1>
-        <Image
-          src={caps}
-          alt="cras"
-          width={350}
-        />
-        <p className="main-text">
-          O Centro de Referência de Assistência Social do Brasil é uma unidade responsável pela oferta de serviços de proteção básica do Sistema Único de Assistência Social, nas áreas de vulnerabilidade e risco social.
-        </p>
-        <ul className="contato">
-          <h2 className="strong">Informações de contato</h2>
-          <li>(85) 99999-9999</li>
-          <li>(85) 99999-9999</li>
-        </ul>
-        <ul className="endeeco">
-          <li>Rua das Laranjeiras, 25</li>
-          <li>Rua das Laranjeiras, 25</li>
-        </ul>
-        <button className="py-15 text-white bg-black w-35 mt-10"><a href="#">Ver no mapa</a></button>
+
+    <div className="h-screen w-screen bg-[#000000bb] fixed z-20 flex  items-center justify-center ">
+      <div className="bg-white py-15 pl-10 w-350 h-200 border rounded-4xl flex flex-wrap gap-8">
+        <img className="w-125 m-5"
+          src="https://santaritadoaraguaia.go.gov.br/wp-content/uploads/2021/05/CRAS.png">
+        </img>
+        <div className="flex flex-wrap gap-4 flex-1 justify-center">
+          <h1 className="text-5xl font-bold w-150">Centro de Referência de Assistência Social (CRAS)</h1>
+          <p className="text-3xl">
+            O Centro de Referência de Assistência Social do Brasil é uma unidade responsável pela oferta de serviços de proteção básica do Sistema Único de Assistência Social, nas áreas de vulnerabilidade e risco social.
+          </p>
+        </div>
+        {/* Informações */}
+        <div className="flex flex-wrap py-10 gap-20">
+          <ul className="contato text-2xl">
+            <h2 className="font-bold text-3xl">Informações de contato</h2>
+            <li>(85) 99999-9999</li>
+            <li>(85) 99999-9999</li>
+          </ul>
+          <ul className="text-2xl">
+            <h2 className="font-bold text-3xl">Endereços</h2>
+            <li>Rua das Laranjeiras, 25</li>
+            <li>Rua das Laranjeiras, 25</li>
+          </ul>
+        </div>
+        {/* Botão */}
+        <div className="ml-50 flex items-center justify-center">
+          <button className="text-white bg-primary w-35 h-30 border rounded-2xl">
+            <a href="#">Ver no mapa</a>
+          </button>
+        </div>
       </div>
     </div >
   )

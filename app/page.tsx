@@ -25,7 +25,7 @@ export default function Home() {
   };
   return (
     <main>
-       <Modal />
+      <Modal />
       <section id='home' className="flex py-12 justify-between gap-12">
 
         <div className={`2xl:w-[60vw] xl:w-[55vw] bg-primary p-8 rounded-tr-xl rounded-br-xl flex flex-col justify-center items-center`}>
@@ -89,7 +89,7 @@ export default function Home() {
           width={250}
           className='absolute -bottom-20 right-[-100px] z-0'
         />
-       
+
       </section>
       <section id='emergencias' className='relative z-10 bg-primary flex justify-between py-12 px-24 items-center'>
         <div className='ml-12 w-[30vw]'>
