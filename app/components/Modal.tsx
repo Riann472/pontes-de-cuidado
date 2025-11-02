@@ -28,7 +28,8 @@ const Modal = () => {
         </div>
         {/* Botão */}
         <div className="ml-50 flex items-center justify-center">
-          <button className="text-white bg-primary w-35 h-30 border rounded-2xl">
+          <button className="text-black text-2xl bg-primary w-40 h-35 rounded-2xl 
+          shadow-xl shadow-black/60 hover:shadow-2xl active:shadow-md active:translate-y-[3px] duration-150">
             <a href="#">Ver no mapa</a>
           </button>
         </div>
