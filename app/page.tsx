@@ -29,7 +29,7 @@ export default function Home() {
     image: Image6,
     name: "",
     fullname: "",
-    organUnitys: []
+    regionals: []
   })
 
   return (

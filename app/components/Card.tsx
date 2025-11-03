@@ -31,7 +31,7 @@ const Card = ({ organ, setOpenModal, setModalData }: CardProps) => {
                 <h2 className={`text-white font-extrabold text-xl ${notoSans.variable}`}>{organ.name.toUpperCase()}</h2>
             </div>
             <div className="bg-tertiary p-3 h-52 flex flex-col justify-between">
-                <p className="text-secondary">{organ.description}</p>
+                <p className="text-secondary">{organ.description.split(".")[0] + "."}</p>
                 <a className="underline font-semibold text-sm">MAIS INFORMAÇÕES</a>
             </div>
         </div>
