@@ -12,6 +12,7 @@ export interface organUnity {
     district: string
     coordNumber: string
     organNumber: string
+    info?: string
     address: string
     mapLink: string
 }
@@ -27,6 +28,7 @@ export interface organ {
     name: string
     fullname: string
     description: string
+    info?: string[]
     regionals: regional[]
     image: StaticImageData
 }
@@ -329,7 +331,10 @@ const organs: organ[] = [
     {
         id: 3,
         name: "CAPS",
-        description: "Oferece atendimento gratuito a pessoas com sofrimento mental ou uso abusivo de álcool e outras drogas, com apoio psicológico, psiquiátrico e social.",
+        description: `Oferece atendimento gratuito a pessoas com sofrimento mental ou uso abusivo de álcool e outras drogas, com apoio psicológico, psiquiátrico e social. CAPS Gerais: atendem pessoas com sofrimentos psíquicos ou transtornos mentais severos e persistentes. ▪︎ CAPS AD: cuidado com pessoas em uso problemático de substâncias psicoativas. ▪︎ CAPS Infanto - juvenis: atendimentos à crianças e adolescentes em sofrimento psíquico / transtornos mentais graves e usos de substâncias psicoativas`,
+        info: ["CAPS Gerais: atendem pessoas com sofrimentos psíquicos ou transtornos mentais severos e persistentes.",
+                "CAPS AD: cuidado com pessoas em uso problemático de substâncias psicoativas.",
+                "CAPS Infanto-juvenis: atendimentos à crianças e adolescentes em sofrimento psíquico/transtornos mentais graves e usos de substâncias psicoativas"],
         fullname: "Centro de Atenção Psicossocial",
         regionals: [
             {
@@ -863,10 +868,108 @@ const organs: organ[] = [
                         mapLink: `https://www.google.com/maps?q=${encodeURIComponent("Rua Gustavo Braga, 547 - Rodolfo Teófilo, Fortaleza - CE")}`
                     }
                 ]
+            },
+            {
+                id: 4,
+                districts: ["Demócrito Rocha", "Itaperi", "Dendê", "Damas", "Vila Peri", "Itaoca", "Serrinha", "Benfica", "Couto Fernandes", "Parangaba", "Fátima", "Vila União", "Jardim América"],
+                organUnitys: [
+                    { district: "Abel Pinto", address: "Travessa Goiás, s/n", mapLink: "https://maps.google.com/?q=Travessa+Goiás,+s/n,+Demócrito+Rocha,+Fortaleza+-+CE", coordNumber: "Não informado", organNumber: "Não informado" },
+                    { district: "Dom Aloísio Lorscheider", address: "Rua Betel, 1895", mapLink: "https://maps.google.com/?q=Rua+Betel,+1895,+Itaperi,+Fortaleza+-+CE", coordNumber: "Não informado", organNumber: "Não informado" },
+                    { district: "Fco. Monteiro", address: "Av. Dos Eucaliptos, s/n", mapLink: "https://maps.google.com/?q=Av.+Dos+Eucaliptos,+s/n,+Dendê,+Fortaleza+-+CE", coordNumber: "Não informado", organNumber: "Não informado" },
+                    { district: "Gothardo Peixoto F. Lima (em reforma total)", address: "Rua Irmã Bazet, 153", mapLink: "https://maps.google.com/?q=Rua+Irmã+Bazet,+153,+Damas,+Fortaleza+-+CE", coordNumber: "Não informado", organNumber: "Não informado" },
+                    { district: "Gutemberg Braun", address: "Rua Monsenhor Agostinho, 505", mapLink: "https://maps.google.com/?q=Rua+Monsenhor+Agostinho,+505,+Vila+Peri,+Fortaleza+-+CE", coordNumber: "Não informado", organNumber: "Não informado" },
+                    { district: "Jose Valdevino Carvalho", address: "Rua Guará, S/N", mapLink: "https://maps.google.com/?q=Rua+Guará,+S/N,+Itaoca,+Fortaleza+-+CE", coordNumber: "Não informado", organNumber: "Não informado" },
+                    { district: "Luis Albuquerque Mendes", address: "Rua Benjamin Franklin, 735", mapLink: "https://maps.google.com/?q=Rua+Benjamin+Franklin,+735,+Serrinha,+Fortaleza+-+CE", coordNumber: "Não informado", organNumber: "Não informado" },
+                    { district: "Luis Costa", address: "Rua Marechal Deodoro, 1501", mapLink: "https://maps.google.com/?q=Rua+Marechal+Deodoro,+1501,+Benfica,+Fortaleza+-+CE", coordNumber: "Não informado", organNumber: "Não informado" },
+                    { district: "Ocelo Pinheiro", address: "Rua Elcias Lopes, 517", mapLink: "https://maps.google.com/?q=Rua+Elcias+Lopes,+517,+Itaoca,+Fortaleza+-+CE", coordNumber: "Não informado", organNumber: "Não informado" },
+                    { district: "Oliveira Pombo", address: "Rua Rio Grande do Sul, s/n", mapLink: "https://maps.google.com/?q=Rua+Rio+Grande+do+Sul,+s/n,+Couto+Fernandes,+Fortaleza+-+CE", coordNumber: "Não informado", organNumber: "Não informado" },
+                    { district: "Antônio Ciríaco de Holanda", address: "Rua Gomes Brasil, 555", mapLink: "https://maps.google.com/?q=Rua+Gomes+Brasil,+555,+Parangaba,+Fortaleza+-+CE", coordNumber: "Não informado", organNumber: "Não informado" },
+                    { district: "Roberto Bruno", address: "Av. Borges de Melo, 910", mapLink: "https://maps.google.com/?q=Av.+Borges+de+Melo,+910,+Fátima,+Fortaleza+-+CE", coordNumber: "Não informado", organNumber: "Não informado" },
+                    { district: "Turbay Barreira", address: "Rua Gonçalo Souto, 420", mapLink: "https://maps.google.com/?q=Rua+Gonçalo+Souto,+420,+Vila+União,+Fortaleza+-+CE", coordNumber: "Não informado", organNumber: "Não informado" },
+                    { district: "Dom José Bezerra Coutinho", address: "Rua Primeiro de Janeiro, s/n", mapLink: "https://maps.google.com/?q=Rua+Primeiro+de+Janeiro,+s/n,+Parangaba,+Fortaleza+-+CE", coordNumber: "Não informado", organNumber: "Não informado" },
+                    { district: "Dr. Raimundo Pontes Filho", address: "Rua Damasceno Girão, S/n", mapLink: "https://maps.google.com/?q=Rua+Damasceno+Girão,+S/n,+Jardim+América,+Fortaleza+-+CE", coordNumber: "Não informado", organNumber: "Não informado" }
+                ]
+            },
+            {
+                id: 5,
+                districts: ["Bom Jardim", "Granja Lisboa", "Granja Portugal", "Conjunto Esperança", "Jardim Jatobá", "Aracapé", "Genibaú", "Mondubim", "José Walter"],
+                organUnitys: [
+                    { district: "UBS Abner Cavalcante Brasil", address: "Rua Joana Batista, 471", mapLink: `https://www.google.com/maps?q=${encodeURIComponent("Rua Joana Batista, 471, Bom Jardim, Fortaleza - CE")}`, coordNumber: "Não informado", organNumber: "Não informado" },
+                    { district: "UBS Argeu Herbster", address: "Rua Geraldo Barbosa, 1095", mapLink: `https://www.google.com/maps?q=${encodeURIComponent("Rua Geraldo Barbosa, 1095, Bom Jardim, Fortaleza - CE")}`, coordNumber: "Não informado", organNumber: "Não informado" },
+                    { district: "UBS Dom Lustosa", address: "Rua A, s/n", mapLink: `https://www.google.com/maps?q=${encodeURIComponent("Rua A, s/n, Granja Lisboa, Fortaleza - CE")}`, coordNumber: "Não informado", organNumber: "Não informado" },
+                    { district: "UBS Fco. Edmilson Pinheiro", address: "Av. H, 2191", mapLink: `https://www.google.com/maps?q=${encodeURIComponent("Av. H, 2191, Granja Lisboa, Fortaleza - CE")}`, coordNumber: "Não informado", organNumber: "Não informado" },
+                    { district: "UBS Fernando Diógenes", address: "Rua Teodoro de Castro, s/n", mapLink: `https://www.google.com/maps?q=${encodeURIComponent("Rua Teodoro de Castro, s/n, Granja Portugal, Fortaleza - CE")}`, coordNumber: "Não informado", organNumber: "Não informado" },
+                    { district: "UBS Graciliano Muniz", address: "Rua 106, 345", mapLink: `https://www.google.com/maps?q=${encodeURIComponent("Rua 106, 345, Conjunto Esperança, Fortaleza - CE")}`, coordNumber: "Não informado", organNumber: "Não informado" },
+                    { district: "UBS Guarany Mont'alverne", address: "Rua Geraldo Barbosa, 3230", mapLink: `https://www.google.com/maps?q=${encodeURIComponent("Rua Geraldo Barbosa, 3230, Granja Lisboa, Fortaleza - CE")}`, coordNumber: "Não informado", organNumber: "Não informado" },
+                    { district: "UBS Dr. João Barbosa Pires de Paula Pessoa", address: "Rua Rubi, s/n", mapLink: `https://www.google.com/maps?q=${encodeURIComponent("Rua Rubi, s/n, Jardim Jatobá, Fortaleza - CE")}`, coordNumber: "Não informado", organNumber: "Não informado" },
+                    { district: "UBS João Elísio Holanda", address: "Rua Juvêncio Sales, s/n", mapLink: `https://www.google.com/maps?q=${encodeURIComponent("Rua Juvêncio Sales, s/n, Aracapé, Fortaleza - CE")}`, coordNumber: "Não informado", organNumber: "Não informado" },
+                    { district: "UBS José Galba de Araújo", address: "Av. Sen. Fernandes Távora, 3161", mapLink: `https://www.google.com/maps?q=${encodeURIComponent("Av. Sen. Fernandes Távora, 3161, Genibaú, Fortaleza - CE")}`, coordNumber: "Não informado", organNumber: "Não informado" },
+                    { district: "UBS José Paracampos", address: "Rua Alfredo Mamede, 250", mapLink: `https://www.google.com/maps?q=${encodeURIComponent("Rua Alfredo Mamede, 250, Mondubim, Fortaleza - CE")}`, coordNumber: "Não informado", organNumber: "Não informado" },
+                    { district: "UBS José Walter", address: "Av. José de Araújo Lima, 1631 - 3ª etapa", mapLink: `https://www.google.com/maps?q=${encodeURIComponent("Av. José de Araújo Lima, 1631 - 3ª etapa, José Walter, Fortaleza - CE")}`, coordNumber: "Não informado", organNumber: "Não informado" },
+                    { district: "UBS Jurandir Picanço", address: "Rua Duas Nações, s/n", mapLink: `https://www.google.com/maps?q=${encodeURIComponent("Rua Duas Nações, s/n, Granja Portugal, Fortaleza - CE")}`, coordNumber: "Não informado", organNumber: "Não informado" },
+                    { district: "Luciano Torres de Melo", address: "Rua Delta, 365 Manoel Sátiro", coordNumber: "Não informado", organNumber: "Não informado", mapLink: "https://www.google.com/maps?q=Rua%20Delta%2C%20365%20Manoel%20S%C3%A1tiro" },
+                    { district: "Luiza Távora", address: "Travessa São José, 940 Mondubim", coordNumber: "Não informado", organNumber: "Não informado", mapLink: "https://www.google.com/maps?q=Travessa%20S%C3%A3o%20Jos%C3%A9%2C%20940%20Mondubim" },
+                    { district: "Maciel de Brito", address: "R. 602, 2 - Conj. Ceará, Fortaleza - CE, 60531-510", coordNumber: "Não informado", organNumber: "Não informado", mapLink: "https://maps.app.goo.gl/ViefxS4iDTQQtCWo9" },
+                    { district: "Parque São José", address: "Rua Des. Frota, s/n Pq São José", coordNumber: "Não informado", organNumber: "Não informado", mapLink: "https://www.google.com/maps?q=Rua%20Des.%20Frota%2C%20s%2Fn%20Pq%20S%C3%A3o%20Jos%C3%A9" },
+                    { district: "Pedro Celestino", address: "Rua Gastão Justo, 215 Maraponga", coordNumber: "Não informado", organNumber: "Não informado", mapLink: "https://www.google.com/maps?q=Rua%20Gast%C3%A3o%20Justo%2C%20215%20Maraponga" },
+                    { district: "Dr. Pontes Neto (em reforma total)", address: "Rua 541, n 150 - 2 a etapa Conj. Ceará", coordNumber: "Não informado", organNumber: "Não informado", mapLink: "https://www.google.com/maps?q=Rua%20541%2C%20n%20150%20-%202%20a%20etapa%20Conj.%20Cear%C3%A1" },
+                    { district: "Regina Maria da Silva Severino", address: "Rua Itatiaia, 889 Canindezinho", coordNumber: "Não informado", organNumber: "Não informado", mapLink: "https://www.google.com/maps?q=Rua%20Itatiaia%2C%20889%20Canindezinho" },
+                    { district: "Régis Jucá", address: "Av I, 618 Mondubim", coordNumber: "Não informado", organNumber: "Não informado", mapLink: "https://www.google.com/maps?q=Av%20I%2C%20618%20Mondubim" },
+                    { district: "Ronaldo Albuquerque", address: "Av I, s/n Conj. Ceará/Genibaú", coordNumber: "Não informado", organNumber: "Não informado", mapLink: "https://maps.app.goo.gl/iGFFWSwo55f4Kr2AA" },
+                    { district: "José Dilson Vasconcelos Menezes | Siqueira", address: "Rua. Eng. Luís Montenegro, 485 Siqueira", coordNumber: "Não informado", organNumber: "Não informado", mapLink: "https://www.google.com/maps?q=Rua.%20Eng.%20Lu%C3%ADs%20Montenegro%2C%20485%20Siqueira" },
+                    { district: "Viviane Benevides", address: "Rua João Areas, 1296 Manuel Sátiro", coordNumber: "Não informado", organNumber: "Não informado", mapLink: "https://www.google.com/maps?q=Rua%20Jo%C3%A3o%20Areas%2C%201296%20Manuel%20S%C3%A1tiro" },
+                    { district: "Doutor Henrique Mota Neto", address: "R. Serena, S/N Siqueira", coordNumber: "Não informado", organNumber: "Não informado", mapLink: "https://www.google.com/maps?q=R.%20Serena%2C%20S%2FN%20Siqueira" },
+                    { district: "Zélia Correia", address: "Rua Antônio Pereira, 1495 Pl. Ayrton Senna", coordNumber: "Não informado", organNumber: "Não informado", mapLink: "https://www.google.com/maps?q=Rua%20Ant%C3%B4nio%20Pereira%2C%201495%20Pl.%20Ayrton%20Senna" },
+                    { district: "João Machado dos Santos", address: "Travessa João Henrique, 82 Pl. Ayrton Senna", coordNumber: "Não informado", organNumber: "Não informado", mapLink: "https://www.google.com/maps?q=Travessa%20Jo%C3%A3o%20Henrique%2C%2082%20Pl.%20Ayrton%20Senna" },
+                    { district: "Fernando Uchôa Costa", address: "Av. Pau Brasil, s/n José Walter", coordNumber: "Não informado", organNumber: "Não informado", mapLink: "https://www.google.com/maps?q=Av.%20Pau%20Brasil%2C%20s%2Fn%20Jos%C3%A9%20Walter" },
+                    { district: "Pedro Uchoa", address: "R. das Cerejeiras, s/n Presidente Vargas", coordNumber: "Não informado", organNumber: "Não informado", mapLink: "https://www.google.com/maps?q=R.%20das%20Cerejeiras%2C%20s%2Fn%20Presidente%20Vargas" },
+                    { district: "Francisco Tailson Pinheiro", address: "R. Samaria, s/n Bom Jardim", coordNumber: "Não informado", organNumber: "Não informado", mapLink: "https://www.google.com/maps?q=R.%20Samaria%2C%20s%2Fn%20Bom%20Jardim" },
+                    { district: "Agueda Xerez Cunha", address: "Rua D, em frente ao número 23 José Walter", coordNumber: "Não informado", organNumber: "Não informado", mapLink: "https://maps.app.goo.gl/1mfpdigUR4Lm1Lzd7" },
+                    { district: "Rita Maria Lemos Coelho", address: "Rua Geci Freitas Monteiro, em frente ao número 67 Parque Santa Rosa", coordNumber: "Não informado", organNumber: "Não informado", mapLink: "https://maps.app.goo.gl/3LdTbq8b5BG8vHuy9" }
+                ]
+            },
+            {
+                id: 6,
+                districts: ["Passaré", "Pq. Itamaraty", "Alto da Balança", "Pq Dois Irmãos", "Dias Macêdo", "Conj. Palmeiras", "Pedras", "Pq. Santa Maria", "L.Redonda", "Sapiranga", "Coaçu", "Jd das Oliveiras", "Santa Fé", "Santa Filomena", "Edson Queiroz", "Jangurussu", "Messejana", "Sapiranga Coité", "Jangurussu (Maria Tomásia)", "Paupina", "Barroso", "Parque II Irmãos", "Curió", "Cajazeiras"],
+                organUnitys: [
+                    { district: "Alarico Leite", address: "Av. dos Paroaras 301 Passaré", coordNumber: "Não informado", organNumber: "Não informado", mapLink: "https://www.google.com/maps?q=Av.%20dos%20Paroaras%20301%20Passar%C3%A9" },
+                    { district: "Anísio Teixeira", address: "R. Guarany, 355 Pq. Itamaraty", coordNumber: "Não informado", organNumber: "Não informado", mapLink: "https://www.google.com/maps?q=R.%20Guarany%2C%20355%20Pq.%20Itamaraty" },
+                    { district: "César Cals de Oliveira", address: "R. Capitão Aragão, 555 Alto da Balança", coordNumber: "Não informado", organNumber: "Não informado", mapLink: "https://www.google.com/maps?q=R.%20Capit%C3%A3o%20Arag%C3%A3o%2C%20555%20Alto%20da%20Balan%C3%A7a" },
+                    { district: "Edilmar Norões (em reforma parcial)", address: "Rua H, 351 Pq Dois Irmãos", coordNumber: "Não informado", organNumber: "Não informado", mapLink: "https://www.google.com/maps?q=Rua%20H%2C%20351%20Pq%20Dois%20Irm%C3%A3os" },
+                    { district: "Edmar Fujita", address: "Av. Alberto Craveiro, 4211 Dias Macêdo", coordNumber: "Não informado", organNumber: "Não informado", mapLink: "https://www.google.com/maps?q=Av.%20Alberto%20Craveiro%2C%204211%20Dias%20Mac%C3%AAdo" },
+                    { district: "Evandro Ayres de Moura", address: "Av. Castelo de Castro, 2842 Conj. Palmeiras", coordNumber: "Não informado", organNumber: "Não informado", mapLink: "https://www.google.com/maps?q=Av.%20Castelo%20de%20Castro%2C%202842%20Conj.%20Palmeiras" },
+                    { district: "Dr. Acrísio Eufrasino de Pinho", address: "Rua Coletora Central, s/n Pedras", coordNumber: "Não informado", organNumber: "Não informado", mapLink: "https://maps.app.goo.gl/zAJaZTef6xogYH6X8" },
+                    { district: "Fausto Freire", address: "Av. Isabel Bezerra, 416 Pq. Santa Maria", coordNumber: "Não informado", organNumber: "Não informado", mapLink: "https://www.google.com/maps?q=Av.%20Isabel%20Bezerra%2C%20416%20Pq.%20Santa%20Maria" },
+                    { district: "Galba de Araújo (em reforma total)", address: "Av. Recreio, 1390 L. Redonda", coordNumber: "Não informado", organNumber: "Não informado", mapLink: "https://maps.app.goo.gl/Nrn4LQP9gZKJNH3z6" },
+                    { district: "Hélio Góes Ferreira", address: "R. Crisanto Moreira da Rocha, 453 Sapiranga", coordNumber: "Não informado", organNumber: "Não informado", mapLink: "https://www.google.com/maps?q=R.%20Crisanto%20Moreira%20da%20Rocha%2C%20453%20Sapiranga" },
+                    { district: "Jangurussu", address: "Rua Estrada do Itaperi, 146 Passaré", coordNumber: "Não informado", organNumber: "Não informado", mapLink: "https://www.google.com/maps?q=Rua%20Estrada%20do%20Itaperi%2C%20146%20Passar%C3%A9" },
+                    { district: "Janival de Almeida (em reforma parcial)", address: "R. Coelho Garcia, 25 Passaré", coordNumber: "Não informado", organNumber: "Não informado", mapLink: "https://www.google.com/maps?q=R.%20Coelho%20Garcia%2C%2025%20Passar%C3%A9" },
+                    { district: "João Hipólito", address: "Rua 03, nº 88 Dias Macêdo", coordNumber: "Não informado", organNumber: "Não informado", mapLink: "https://www.google.com/maps?q=Rua%2003%2C%20n%C2%BA%2088%20Dias%20Mac%C3%AAdo" },
+                    { district: "José Barros de Alencar", address: "R. José Nogueira, 180 Pedras", coordNumber: "Não informado", organNumber: "Não informado", mapLink: "https://www.google.com/maps?q=R.%20Jos%C3%A9%20Nogueira%2C%20180%20Pedras" },
+                    { district: "Luís Franklin (em reforma parcial)", address: "Rua Alexandre Vieira, s/n Coaçu", coordNumber: "Não informado", organNumber: "Não informado", mapLink: "https://www.google.com/maps?q=Rua%20Alexandre%20Vieira%2C%20s%2Fn%20Coa%C3%A7u" },
+                    { district: "Manoel Carlos Gouveia", address: "Av. Des. Faustino Alb., 486 Jd das Oliveiras", coordNumber: "Não informado", organNumber: "Não informado", mapLink: "https://www.google.com/maps?q=Av.%20Des.%20Faustino%20Alb.%2C%20486%20Jd%20das%20Oliveiras" },
+                    { district: "Maria de Lourdes", address: "Rua Reino Unido, 115 Jd. das Oliveiras", coordNumber: "Não informado", organNumber: "Não informado", mapLink: "https://www.google.com/maps?q=Rua%20Reino%20Unido%2C%20115%20Jd.%20das%20Oliveiras" },
+                    { district: "Maria Grasiela", address: "Rua Edésio Monteiro, 1450 Santa Fé", coordNumber: "Não informado", organNumber: "Não informado", mapLink: "https://www.google.com/maps?q=Rua%20Ed%C3%A9sio%20Monteiro%2C%201450%20Santa%20F%C3%A9" },
+                    { district: "Marcus Aurélio Rabelo", address: "Rua Iracema, 1100 Santa Filomena", coordNumber: "Não informado", organNumber: "Não informado", mapLink: "https://www.google.com/maps?q=Rua%20Iracema%2C%201100%20Santa%20Filomena" },
+                    { district: "Mattos Dourado (em reforma parcial)", address: "Av. Des. Floriano Benevides, 391 Edson Queiroz", coordNumber: "Não informado", organNumber: "Não informado", mapLink: "https://www.google.com/maps?q=Av.%20Des.%20Floriano%20Benevides%2C%20391%20Edson%20Queiroz" },
+                    { district: "Melo Jaborandi", address: "Rua 315, 80 Jangurussu", coordNumber: "Não informado", organNumber: "Não informado", mapLink: "https://www.google.com/maps?q=Rua%20315%2C%2080%20Jangurussu" },
+                    { district: "Lúcia de Sousa Belem", address: "Rua Guilherme Alencar, s/n Messejana", coordNumber: "Não informado", organNumber: "Não informado", mapLink: "https://www.google.com/maps?q=Rua%20Guilherme%20Alencar%2C%20s%2Fn%20Messejana" },
+                    { district: "Monteiro de Moraes", address: "Av. Evilásio Alm Miranda, s/n Sapiranga Coité", coordNumber: "Não informado", organNumber: "Não informado", mapLink: "https://maps.app.goo.gl/Wnx31DYFWwwhwxCC8" },
+                    { district: "Osmar Viana", address: "Av. Chiquinha Gonzaga, s/n Jangurussu (Maria Tomásia)", coordNumber: "Não informado", organNumber: "Não informado", mapLink: "https://www.google.com/maps?q=Av.%20Chiquinha%20Gonzaga%2C%20s%2Fn%20Jangurussu%20(Maria%20Tom%C3%A1sia)" },
+                    { district: "Otoni Cardoso do Vale", address: "Rua José Teixeira Costa, 643 Paupina", coordNumber: "Não informado", organNumber: "Não informado", mapLink: "https://www.google.com/maps?q=Rua%20Jos%C3%A9%20Teixeira%20Costa%2C%20643%20Paupina" },
+                    { district: "Pedro Sampaio", address: "Rua Iracema, 1516 Conj. Palmeiras", coordNumber: "Não informado", organNumber: "Não informado", mapLink: "https://www.google.com/maps?q=Rua%20Iracema%2C%201516%20Conj.%20Palmeiras" },
+                    { district: "Pompeu Vasconcelos (em reforma parcial)", address: "Rua 05, s/n, Conj. J Paulo II Barroso", coordNumber: "Não informado", organNumber: "Não informado", mapLink: "https://maps.app.goo.gl/8hHkcPqTtqDK3fMaA" },
+                    { district: "Sítio São João", address: "Rua Verde Cinco, 71 Jangurussu", coordNumber: "Não informado", organNumber: "Não informado", mapLink: "https://www.google.com/maps?q=Rua%20Verde%20Cinco%2C%2071%20Jangurussu" },
+                    { district: "Terezinha Parente", address: "Rua Nélson Coelho, 209 L. Redonda", coordNumber: "Não informado", organNumber: "Não informado", mapLink: "https://www.google.com/maps?q=Rua%20N%C3%A9lson%20Coelho%2C%20209%20L.%20Redonda" },
+                    { district: "Vicentina Campos", address: "R. B, nº 145 Parque II Irmãos", coordNumber: "Não informado", organNumber: "Não informado", mapLink: "https://www.google.com/maps?q=R.%20B%2C%20n%C2%BA%20145%20Parque%20II%20Irm%C3%A3os" },
+                    { district: "Waldo Pessoa", address: "Rua Cap. Hugo Bezerra, 75 Barroso", coordNumber: "Não informado", organNumber: "Não informado", mapLink: "https://www.google.com/maps?q=Rua%20Cap.%20Hugo%20Bezerra%2C%2075%20Barroso" },
+                    { district: "Doutor Sergio Gomes de Matos", address: "Rua Rouxinol, s/n Edson Queiroz", coordNumber: "Não informado", organNumber: "Não informado", mapLink: "https://www.google.com/maps?q=Rua%20Rouxinol%2C%20s%2Fn%20Edson%20Queiroz" },
+                    { district: "Josafá Gomes da Silva", address: "Rua 24 de Novembro, 556 Messejana", coordNumber: "Não informado", organNumber: "Não informado", mapLink: "https://www.google.com/maps?q=Rua%2024%20de%20Novembro%2C%20556%20Messejana" },
+                    { district: "Márcia Maria Mesquita Veloso", address: "Rua Odilon Guimarães, 1773 Curió", coordNumber: "Não informado", organNumber: "Não informado", mapLink: "https://www.google.com/maps?q=Rua%20Odilon%20Guimar%C3%A3es%2C%201773%20Curi%C3%B3" },
+                    { district: "Padre Alberto Trombini", address: "Av. Deputado Paulino Rocha, s/n Cajazeiras", coordNumber: "Não informado", organNumber: "Não informado", mapLink: "https://www.google.com/maps?q=Av.%20Deputado%20Paulino%20Rocha%2C%20s%2Fn%20Cajazeiras" }
+                ]
             }
-
         ],
-
         image: Ubs
     },
     {
@@ -874,7 +977,91 @@ const organs: organ[] = [
         name: "Clínicas Escola",
         description: "Vinculadas a faculdades, oferecem atendimentos gratuitos ou de baixo custo em áreas como psicologia, fisioterapia, nutrição e outras, com supervisão de professores e profissionais.",
         fullname: "",
-        regionals: [],
+        regionals: [
+            {
+                id: 1,
+                districts: [],
+                organUnitys: [
+                    {
+                        district: "Ari de Sá (UniAri)",
+                        address: "Rua João Cordeiro, 1904 - Centro, Fortaleza (CE)",
+                        coordNumber: "Não informado",
+                        organNumber: "(85) 99213-0812",
+                        mapLink: "https://www.google.com/maps/search/Rua+João+Cordeiro,+1904+-+Centro,+Fortaleza"
+                    },
+                    {
+                        district: "Ateneu (UniAteneu) - Unidade Harmony",
+                        address: "Av. Humberto Monte, 2929 - Rodolfo Teófilo, Fortaleza (CE)",
+                        coordNumber: "Não informado",
+                        organNumber: "(85) 3108-4661",
+                        mapLink: "https://www.google.com/maps/search/Av.+Humberto+Monte,+2929+-+Rodolfo+Teófilo,+Fortaleza"
+                    },
+                    {
+                        district: "Ateneu (UniAteneu) - Unidade Messejana",
+                        address: "Rua Antônio Gadelha, 621 - Messejana, Fortaleza (CE)",
+                        coordNumber: "Não informado",
+                        organNumber: "(85) 3022-3443",
+                        mapLink: "https://www.google.com/maps/search/Rua+Antônio+Gadelha,+621+-+Messejana,+Fortaleza"
+                    },
+                    {
+                        district: "Estácio - Unidade Via Corpvs",
+                        address: "Rua Eliseu Uchôa Beco, 600 - Patriolino Ribeiro, Fortaleza (CE)",
+                        coordNumber: "Não informado",
+                        organNumber: "(85) 3270-6798",
+                        mapLink: "https://www.google.com/maps/search/Rua+Eliseu+Uchôa+Beco,+600+-+Patriolino+Ribeiro,+Fortaleza"
+                    },
+                    {
+                        district: "Estácio - Unidade Parangaba",
+                        address: "Av. Senador Fernandes Távora, 137A - Jóquei Clube, Fortaleza (CE)",
+                        coordNumber: "Não informado",
+                        organNumber: "(85) 3270-6798",
+                        mapLink: "https://www.google.com/maps/search/Av.+Senador+Fernandes+Távora,+137A+-+Jóquei+Clube,+Fortaleza"
+                    },
+                    {
+                        district: "Farias Brito (Fbuni)",
+                        address: "Rua Castro Monte, 1364 - Varjota, Fortaleza (CE)",
+                        coordNumber: "Não informado",
+                        organNumber: "(85) 99401-6738",
+                        mapLink: "https://www.google.com/maps/search/Rua+Castro+Monte,+1364+-+Varjota,+Fortaleza"
+                    },
+                    {
+                        district: "Unifametro",
+                        address: "R. Liberato Barroso, 1503 - Centro, Fortaleza - CE",
+                        coordNumber: "Não informado",
+                        organNumber: "(85) 3206-6433",
+                        mapLink: "https://www.google.com/maps/search/Rua+Liberato+Barroso,+1503+-+Centro,+Fortaleza"
+                    },
+                    {
+                        district: "Universidade Federal do Ceará (UFC)",
+                        address: "Rua Waldery Uchoa, 3-A - Benfica, Fortaleza (CE)",
+                        coordNumber: "Não informado",
+                        organNumber: "(85) 3366-7690 / (85) 3366-7689",
+                        mapLink: "https://www.google.com/maps/search/Rua+Waldery+Uchoa,+3-A+-+Benfica,+Fortaleza"
+                    },
+                    {
+                        district: "Unichristus",
+                        address: "Av. Desembargador Moreira, 2120 - 1º andar, Dionísio Torres, Fortaleza (CE)",
+                        coordNumber: "Não informado",
+                        organNumber: "(85) 99401-5648 / (85) 3468-2500",
+                        mapLink: "https://www.google.com/maps/search/Av.+Desembargador+Moreira,+2120+-+Dionísio+Torres,+Fortaleza"
+                    },
+                    {
+                        district: "Uninassau",
+                        address: "Av. Aguanambi, 251 - José Bonifácio, Fortaleza (CE)",
+                        coordNumber: "Não informado",
+                        organNumber: "(85) 3201-2448",
+                        mapLink: "https://www.google.com/maps/search/Av.+Aguanambi,+251+-+José+Bonifácio,+Fortaleza"
+                    },
+                    {
+                        district: "Unifor",
+                        address: "Rua Maramaldo Campelo, 50 - Edson Queiroz, Fortaleza (CE)",
+                        coordNumber: "Não informado",
+                        organNumber: "(85) 99200-7069 / nami@unifor.br",
+                        mapLink: "https://www.google.com/maps/search/Rua+Maramaldo+Campelo,+50+-+Edson+Queiroz,+Fortaleza"
+                    }
+                ]
+            }
+        ],
         image: Escola
     },
     {
@@ -882,7 +1069,42 @@ const organs: organ[] = [
         name: "Centros LGBTIQA+",
         description: "Oferecem acolhimento, escuta, orientação jurídica, psicológica e social para pessoas LGBTQIA+, além de promoverem ações de combate à discriminação e inclusão.",
         fullname: "",
-        regionals: [],
+        regionals: [
+            {
+                id: 1,
+                districts: [],
+                organUnitys: [
+                    {
+                        district: "Outra Casa Coletiva",
+                        address: "R. Instituto do Ceará, 164 - Benfica, Fortaleza - CE, 60015-300",
+                        coordNumber: "Não informado",
+                        organNumber: "Não informado",
+                        mapLink: "https://www.google.com/maps/search/R.+Instituto+do+Ceará,+164+-+Benfica,+Fortaleza"
+                    },
+                    {
+                        district: "Centro de Referência LGBT Janaína Dutra",
+                        address: "R. Jaime Benévolo, 21 - Centro, Fortaleza - CE, 60050-080",
+                        coordNumber: "Não informado",
+                        organNumber: "Não informado",
+                        mapLink: "https://www.google.com/maps/search/R.+Jaime+Benévolo,+21+-+Centro,+Fortaleza"
+                    },
+                    {
+                        district: "Centro Estadual de Referência LGBT+ Thina Rodrigues",
+                        address: "R. Valdetário Mota, 970 - Papicu, Fortaleza - CE, 60175-742",
+                        coordNumber: "Não informado",
+                        organNumber: "Não informado",
+                        mapLink: "https://www.google.com/maps/search/R.+Valdetário+Mota,+970+-+Papicu,+Fortaleza"
+                    },
+                    {
+                        district: "TRANSformar",
+                        address: "R. José Maurício, 527 - Siqueira, Fortaleza - CE, 60736-140",
+                        coordNumber: "Não informado",
+                        organNumber: "Não informado",
+                        mapLink: "https://www.google.com/maps/search/R.+José+Maurício,+527+-+Siqueira,+Fortaleza"
+                    }
+                ]
+            }
+        ],
         image: Lgbt
     },
     {
@@ -890,7 +1112,77 @@ const organs: organ[] = [
         name: "Centros POP",
         description: "Atendem pessoas em situação de rua, oferecendo alimentação, higiene, guarda de pertences, encaminhamentos e apoio para reinserção social.",
         fullname: "",
-        regionals: [],
+        regionals: [
+            {
+                id: 1,
+                districts: [],
+                organUnitys: [
+                    {
+                        district: "Centro de Referência Especializado para População em Situação de Rua (Centro POP)",
+                        address: "Rua Jaime Benévolo, 1059 - Centro, Fortaleza - CE, 60050-081",
+                        coordNumber: "Não informado",
+                        organNumber: "Não informado",
+                        mapLink: "https://www.google.com/maps/search/Rua+Jaime+Benévolo,+1059+-+Centro,+Fortaleza"
+                    },
+                    {
+                        district: "Centro de Referência Especializado para População em Situação de Rua (Centro POP)",
+                        address: "Avenida João Pessoa, 4180 - Damas, Fortaleza - CE, 60425-813",
+                        coordNumber: "Não informado",
+                        organNumber: "Não informado",
+                        mapLink: "https://www.google.com/maps/search/Avenida+João+Pessoa,+4180+-+Damas,+Fortaleza"
+                    },
+                    {
+                        district: "Refeitório São Vicente de Paulo - Distribuição de almoço às 11h e sopa às 16h",
+                        address: "Rua: Padre Mororó, nº 686 - Moura Brasil",
+                        coordNumber: "Não informado",
+                        organNumber: "Não informado",
+                        mapLink: "https://www.google.com/maps/search/Rua+Padre+Mororó,+686+-+Moura+Brasil,+Fortaleza"
+                    },
+                    {
+                        district: "Recanto do Sagrado Coração -  Distribuição de almoço às 11h e sopa às 16h",
+                        address: "Avenida da Universidade, 3106",
+                        coordNumber: "Não informado",
+                        organNumber: "Não informado",
+                        mapLink: "https://www.google.com/maps/search/Avenida+da+Universidade,+3106+-+Benfica,+Fortaleza"
+                    },
+                    {
+                        district: "Espaço de Higiene Cidadã",
+                        address: "Av Dom Manoel, 1250 - Centro",
+                        coordNumber: "Não informado",
+                        organNumber: "Não informado",
+                        mapLink: "https://www.google.com/maps/search/Av+dom+Manoel,+1250+-+Centro,+Fortaleza"
+                    },
+                    {
+                        district: "Espaço de Higiene Cidadã",
+                        address: "Praça da Bandeira - Centro",
+                        coordNumber: "Não informado",
+                        organNumber: "Não informado",
+                        mapLink: "https://www.google.com/maps/search/Praça+da+Bandeira,+-+Centro,+Fortaleza"
+                    },
+                    {
+                        district: "Espaço de Higiene Cidadã",
+                        address: "Rua Pedro II,100 - Parangaba",
+                        coordNumber: "Não informado",
+                        organNumber: "Não informado",
+                        mapLink: "https://www.google.com/maps/search/Rua+Pedro+II,+100+-+Parangaba,+Fortaleza"
+                    },
+                    {
+                        district: "Pousada Social",
+                        address: "Av. do Imperador, 769 - Centro (140 vagas)",
+                        coordNumber: "Não informado",
+                        organNumber: "Não informado",
+                        mapLink: "https://www.google.com/maps/search/Av+do+Imperador,+769+-+Centro,+Fortaleza"
+                    },
+                    {
+                        district: "Pousada social",
+                        address: "Av. Dom Manoel, 1250 - Centro (100 vagas)",
+                        coordNumber: "Não informado",
+                        organNumber: "Não informado",
+                        mapLink: "https://www.google.com/maps/search/Av+Dom+Manoel,+1250+-+Centro,+Fortaleza"
+                    },
+                ]
+            }
+        ],
         image: Pop
     },
     {
@@ -898,7 +1190,62 @@ const organs: organ[] = [
         name: "ONG'S",
         description: "Instituições sem fins lucrativos que atuam em diversas causas sociais e prestam serviços à comunidade, como realização de doações, proteção animal, educação, entre outros auxílios.",
         fullname: "Organizações Não Governamentais",
-        regionals: [],
+        regionals: [
+            {
+                id: 1,
+                districts: [],
+                organUnitys: [
+                    {
+                        district: "Fundação Projeto Diferente",
+                        address: "Rua José Vilar, 938 - Aldeota, Fortaleza (CE)",
+                        coordNumber: "Não informado",
+                        organNumber: "Não informado",
+                        info: "Público beneficiado: crianças, jovens e suas famílias. Desenvolve projetos de desenvolvimento, promoção de saúde e bem estar para crianças do Transtorno do Espectro Autista e suas famílias",
+                        mapLink: "https://www.google.com/maps/search/Rua+José+Vilar,+938+-+Aldeota,+Fortaleza"
+                    },
+                    {
+                        district: "AMOR – Associação Mães do Orgulho e Resistência Ceará",
+                        address: "R. Olívio Câmara, 74 - José Bonifacio, Fortaleza - CE, 60040-130",
+                        coordNumber: "Não informado",
+                        organNumber: "Não informado",
+                        info: "Público beneficiado: Familiares de pessoas LGBTQIAPN+. Acolhimento de familiares que precisam de apoio devido a violências sofridas por seus filhos, letramento nas questões LGBTQIAPN+ em escolas, instituições e empresas, luta por políticas públicas para este público.",
+                        mapLink: "https://www.google.com/maps/search/Rua+Olívio+Câmara,+74,+Fortaleza"
+                    },
+                    {
+                        district: "Instituto SOS Periferia",
+                        address: "Av. Gen. Osório de Paiva, 5035 - Canindezinho, Fortaleza (CE)",
+                        coordNumber: "Não informado",
+                        organNumber: "(85) 98586-5167",
+                        info: "O Instituto S.O.S Periferia, fundado em 2007, atua na promoção da segurança alimentar e nutricional de comunidades periféricas da Grande Fortaleza. Além de fornecer alimentação direta, a organização oferece formações profissionais e ações de promoção de direitos humanos para todas as faixas etárias.",
+                        mapLink: "https://www.google.com/maps/search/Av.+Gen.+Osório+de+Paiva,+5035+-+Canindezinho,+Fortaleza"
+                    },
+                    {
+                        district: "Lar Beneficente Cisco de Luz",
+                        address: "R. Tobias Correia, 1404 - Centro, Caucaia - CE, 61600-060",
+                        coordNumber: "Não informado",
+                        organNumber: "Não informado",
+                        info: "Público beneficiado: Crianças, jovens, adultos, idosos, pessoas com deficiência, moradores de rua e LGBT. Oferece acolhimento e assessoramento, coral, teatro, palestras, encontro de casais, distribuição de alimentos",
+                        mapLink: "https://www.google.com/maps/search/Rua+Tobias+Correia,+1404+-+Centro,+Caucaia"
+                    },
+                    {
+                        district: "Instituto Maria do Carmo",
+                        address: "R. Cel. Fabriciano, 1820 - A - Granja Portugal",
+                        coordNumber: "Não informado",
+                        organNumber: "Não informado",
+                        info: "Público beneficiado: Crianças e adolescentes, idosos e famílias. Oferece serviços de convivência e fortalecimento de vínculos familiares e comunitários. Participa dos Programas da REURB- regularização fundiária, Ceará Sem Fome e cursos profissionalizantes.",
+                        mapLink: "https://maps.app.goo.gl/GvESdn5EpSJ9uFvg9"
+                    },
+                    {
+                        district: "Instituto Vida Videira - IVV",
+                        address: "Rua São João Del Rei, 1764 - Sapiranga, Fortaleza",
+                        coordNumber: "Não informado",
+                        organNumber: "Não informado",
+                        info: "Público beneficiado: Crianças, adolescentes e adultos. Atendimentos na Área da Saúde (Dentista, Médicos, Psicólogos, Nutricionista e Fisioterapia), Esporte, Cursos Profissionalizantes e Educacional (creche e contraturno da escola para crianças e adolescentes) ",
+                        mapLink: "https://maps.app.goo.gl/ixxo2DWhyprjr5GH9"
+                    }
+                ]
+            }
+        ],
         image: Ong
     },
 ]

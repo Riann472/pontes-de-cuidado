@@ -1,6 +1,9 @@
 import { Dispatch, SetStateAction } from "react"
 import { organ } from "../data/organs"
 import Image from "next/image"
+import { Tooltip } from "radix-ui";
+import TooltipDemo from "./ui/Tooltip";
+import { Info } from "lucide-react";
 
 interface ModalProps {
   setOpenModal: Dispatch<SetStateAction<boolean>>
@@ -31,6 +34,9 @@ const Modal = ({ setOpenModal, modalData }: ModalProps) => {
         <div className="mt-10 p-2">
           <h2 className="font-bold text-2xl text-center mb-1">Informações de contato e endereços</h2>
           <h4 className="font-semibold text-base text-center mb-6">Clique nos botoes de endereço para ir ao mapa!</h4>
+          {modalData.info && modalData.info.map(info => (
+            <h1 className="mb-2 text-center font-bold text-xl">{info}</h1>
+          ))}
           <div className="flex flex-col gap-12">
             {modalData.regionals?.length == 0 && (
               <p>Dados indisponiveis.</p>
@@ -38,18 +44,27 @@ const Modal = ({ setOpenModal, modalData }: ModalProps) => {
             {modalData.regionals?.map((regional) => (
               <div key={regional.id} className="flex flex-col items-center gap-6 text-center">
                 <div>
-                  <h1 className="mb-2 font-bold text-2xl">Regional {regional.id}</h1>
-                  <p>Bairros: ({regional.districts?.map((district, idx, arr) => {
-                    return idx == arr.length - 1 ? `${district}` : `${district}, `
-                  })})</p>
+                  {modalData.regionals?.length > 1 && <h1 className="mb-2 font-bold text-2xl">Regional {regional.id}</h1>}
+                  {regional.districts.length > 0 && (
+                    <>
+                      <p>Bairros: ({regional.districts?.map((district, idx, arr) => {
+                        return idx == arr.length - 1 ? `${district}` : `${district}, `
+                      })})</p>
+                    </>
+                  )}
                 </div>
-                <div className="flex flex-wrap justify-center gap-10 w-full max-w-[900px]">
+                <div className="flex flex-wrap justify-center gap-10 w-full max-w-full">
                   {regional.organUnitys?.map((unity, idx) => (
                     <a
                       key={idx}
-                      className="flex flex-col items-center cursor-pointer bg-gray-200 p-5 rounded-2xl shadow-md w-[250px] text-center"
+                      className="relative flex flex-col justify-center items-center cursor-pointer bg-gray-200 p-5 rounded-2xl shadow-md w-[250px] text-center"
                       href={unity.mapLink}
                     >
+                      {unity.info && (
+                        <div className="w-full flex justify-end mb top-3 right-3 absolute">
+                          <TooltipDemo Icon={Info} text={unity.info} />
+                        </div>
+                      )}
                       <h1 className="font-semibold text-lg">{unity.district}</h1>
                       <button
                         className="bg-primary text-gray-800 font-bold px-3 py-2 cursor-pointer rounded-xl mt-2 hover:opacity-90"
