@@ -11,8 +11,10 @@ import Button from "./components/Button";
 import Card from "./components/Card";
 import { ArrowDownRight } from "lucide-react";
 import Image from 'next/image';
-import organs from './data/organs'
+import organs, { organ } from './data/organs'
 import Modal from './components/Modal';
+import { scrollToSection } from './utils/functions'
+import { useState } from 'react'
 
 const notoSans = Noto_Sans({
   variable: "--font-noto-sans",
@@ -20,14 +22,22 @@ const notoSans = Noto_Sans({
 });
 
 export default function Home() {
-  const scrollToSection = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-  };
+  const [openModal, setOpenModal] = useState<boolean>(false)
+  const [modalData, setModalData] = useState<organ>({
+    id: 0,
+    description: "",
+    image: Image6,
+    name: "",
+    fullname: "",
+    regionals: []
+  })
+
   return (
     <main>
-      <Modal />
+      {openModal && (
+        <Modal setOpenModal={setOpenModal} modalData={modalData}/>
+      )}
       <section id='home' className="flex py-12 justify-between gap-12">
-
         <div className={`2xl:w-[60vw] xl:w-[55vw] bg-primary p-8 rounded-tr-xl rounded-br-xl flex flex-col justify-center items-center`}>
           <p className={`${notoSans.variable} text-2xl text-secondary font-bold`}>CONHEÇA SEUS DIREITOS</p>
           <h1 className="text-8xl text-white font-extrabold scale-x-70 text-center mb-10 mt-3">REDES DE APOIO EM FORTALEZA</h1>
@@ -77,9 +87,9 @@ export default function Home() {
           {organs?.map(organ => (
             <Card
               key={organ.id}
-              src={organ.image}
-              organ={organ.name}
-              description={organ.description}
+              organ={organ}
+              setOpenModal={setOpenModal}
+              setModalData={setModalData}
             />
           ))}
         </div>
