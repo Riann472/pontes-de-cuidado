@@ -274,7 +274,7 @@ const organs: organ[] = [
     {
         id: 2,
         name: "CREAS",
-        description: "Atende pessoas e famílias que vivenciam situações de violação de direitos, como violência doméstica, abuso, abandono ou trabalho infantil, oferecendo acompanhamento.",
+        description: "O CREAS é um serviço voltado ao atendimento de pessoas e famílias que enfrentam situações de violação de direitos. Tais como violência doméstica, abuso sexual, negligência, abandono, exploração ou trabalho infantil. O centro oferece acompanhamento psicossocial, orientação jurídica e apoio social, visando restabelecer vínculos familiares e comunitários, além de promover a proteção e o fortalecimento da cidadania dos usuários.",
         fullname: "Centro de Referência Especializado de Assistência Social",
         regionals: [
             {
@@ -331,10 +331,10 @@ const organs: organ[] = [
     {
         id: 3,
         name: "CAPS",
-        description: `Oferece atendimento gratuito a pessoas com sofrimento mental ou uso abusivo de álcool e outras drogas, com apoio psicológico, psiquiátrico e social. CAPS Gerais: atendem pessoas com sofrimentos psíquicos ou transtornos mentais severos e persistentes. ▪︎ CAPS AD: cuidado com pessoas em uso problemático de substâncias psicoativas. ▪︎ CAPS Infanto - juvenis: atendimentos à crianças e adolescentes em sofrimento psíquico / transtornos mentais graves e usos de substâncias psicoativas`,
+        description: `Oferece atendimento gratuito a pessoas com sofrimento mental ou uso abusivo de álcool e outras drogas. Conta com uma equipe multiprofissional que realiza acompanhamento psicológico, psiquiátrico e social, promovendo a reabilitação, o cuidado contínuo e a reintegração familiar e comunitária dos usuários.`,
         info: ["CAPS Gerais: atendem pessoas com sofrimentos psíquicos ou transtornos mentais severos e persistentes.",
-                "CAPS AD: cuidado com pessoas em uso problemático de substâncias psicoativas.",
-                "CAPS Infanto-juvenis: atendimentos à crianças e adolescentes em sofrimento psíquico/transtornos mentais graves e usos de substâncias psicoativas"],
+            "CAPS AD: cuidado com pessoas em uso problemático de substâncias psicoativas.",
+            "CAPS Infanto-juvenis: atendimentos à crianças e adolescentes em sofrimento psíquico/transtornos mentais graves e usos de substâncias psicoativas"],
         fullname: "Centro de Atenção Psicossocial",
         regionals: [
             {
@@ -470,7 +470,7 @@ const organs: organ[] = [
     {
         id: 4,
         name: "UBS",
-        description: "É a porta de entrada do SUS, onde são realizados atendimentos médicos, vacinação, exames básicos e acompanhamento de gestantes, crianças e idosos.",
+        description: `É a porta de entrada do SUS, onde são realizados atendimentos médicos, vacinação, exames básicos e acompanhamento de gestantes, crianças e idosos. Também promove ações de prevenção, educação em saúde e acompanhamento contínuo das famílias, garantindo o acesso integral e humanizado aos serviços de saúde.`,
         fullname: "Unidades Básicas de Saúde",
         regionals: [
             {
@@ -954,7 +954,7 @@ const organs: organ[] = [
                     { district: "Mattos Dourado (em reforma parcial)", address: "Av. Des. Floriano Benevides, 391 Edson Queiroz", coordNumber: "Não informado", organNumber: "Não informado", mapLink: "https://www.google.com/maps?q=Av.%20Des.%20Floriano%20Benevides%2C%20391%20Edson%20Queiroz" },
                     { district: "Melo Jaborandi", address: "Rua 315, 80 Jangurussu", coordNumber: "Não informado", organNumber: "Não informado", mapLink: "https://www.google.com/maps?q=Rua%20315%2C%2080%20Jangurussu" },
                     { district: "Lúcia de Sousa Belem", address: "Rua Guilherme Alencar, s/n Messejana", coordNumber: "Não informado", organNumber: "Não informado", mapLink: "https://www.google.com/maps?q=Rua%20Guilherme%20Alencar%2C%20s%2Fn%20Messejana" },
-                    { district: "Monteiro de Moraes", address: "Av. Evilásio Alm Miranda, s/n Sapiranga Coité", coordNumber: "Não informado", organNumber: "Não informado", mapLink: "https://maps.app.goo.gl/Wnx31DYFWwwhwxCC8" },
+                    { district: "Monteiro de Moraes", address: "Av. Evilásio Alm Miranda, 391 Sapiranga Coité", coordNumber: "Não informado", organNumber: "Não informado", mapLink: "https://maps.app.goo.gl/Wnx31DYFWwwhwxCC8" },
                     { district: "Osmar Viana", address: "Av. Chiquinha Gonzaga, s/n Jangurussu (Maria Tomásia)", coordNumber: "Não informado", organNumber: "Não informado", mapLink: "https://www.google.com/maps?q=Av.%20Chiquinha%20Gonzaga%2C%20s%2Fn%20Jangurussu%20(Maria%20Tom%C3%A1sia)" },
                     { district: "Otoni Cardoso do Vale", address: "Rua José Teixeira Costa, 643 Paupina", coordNumber: "Não informado", organNumber: "Não informado", mapLink: "https://www.google.com/maps?q=Rua%20Jos%C3%A9%20Teixeira%20Costa%2C%20643%20Paupina" },
                     { district: "Pedro Sampaio", address: "Rua Iracema, 1516 Conj. Palmeiras", coordNumber: "Não informado", organNumber: "Não informado", mapLink: "https://www.google.com/maps?q=Rua%20Iracema%2C%201516%20Conj.%20Palmeiras" },
@@ -975,7 +975,7 @@ const organs: organ[] = [
     {
         id: 5,
         name: "Clínicas Escola",
-        description: "Vinculadas a faculdades, oferecem atendimentos gratuitos ou de baixo custo em áreas como psicologia, fisioterapia, nutrição e outras, com supervisão de professores e profissionais.",
+        description: `São unidades vinculadas a faculdades que oferecem atendimentos gratuitos ou de baixo custo em diversas áreas, como psicologia, fisioterapia, nutrição e outras. Os serviços são realizados por estudantes em formação, sob a supervisão de professores e profissionais qualificados, garantindo atendimento de qualidade e contribuindo para a formação prática dos futuros profissionais.`,
         fullname: "",
         regionals: [
             {
@@ -1067,7 +1067,7 @@ const organs: organ[] = [
     {
         id: 6,
         name: "Centros LGBTIQA+",
-        description: "Oferecem acolhimento, escuta, orientação jurídica, psicológica e social para pessoas LGBTQIA+, além de promoverem ações de combate à discriminação e inclusão.",
+        description: `São espaços voltados ao acolhimento e à promoção dos direitos da população LGBTQIA+. Oferecem escuta qualificada, orientação jurídica, psicológica e social, além de desenvolverem ações de combate à discriminação, fortalecimento da cidadania e promoção da inclusão social e do respeito à diversidade.`,
         fullname: "",
         regionals: [
             {
@@ -1110,7 +1110,7 @@ const organs: organ[] = [
     {
         id: 7,
         name: "Centros POP",
-        description: "Atendem pessoas em situação de rua, oferecendo alimentação, higiene, guarda de pertences, encaminhamentos e apoio para reinserção social.",
+        description: `Atendem pessoas em situação de rua, oferecendo alimentação, espaço para higiene pessoal, guarda de pertences e encaminhamentos para outros serviços da rede de assistência. Também realizam acompanhamento social e promovem ações voltadas à reinserção familiar, comunitária e no mercado de trabalho.`,
         fullname: "",
         regionals: [
             {
@@ -1188,7 +1188,7 @@ const organs: organ[] = [
     {
         id: 8,
         name: "ONG'S",
-        description: "Instituições sem fins lucrativos que atuam em diversas causas sociais e prestam serviços à comunidade, como realização de doações, proteção animal, educação, entre outros auxílios.",
+        description: `São instituições sem fins lucrativos que atuam em diferentes causas sociais e comunitárias. Prestam serviços como doações de alimentos, roupas e materiais, ações de proteção animal, projetos educacionais, culturais e ambientais, além de oferecer apoio a grupos em situação de vulnerabilidade.`,
         fullname: "Organizações Não Governamentais",
         regionals: [
             {

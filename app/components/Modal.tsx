@@ -34,8 +34,8 @@ const Modal = ({ setOpenModal, modalData }: ModalProps) => {
         <div className="mt-10 p-2">
           <h2 className="font-bold text-2xl text-center mb-1">Informações de contato e endereços</h2>
           <h4 className="font-semibold text-base text-center mb-6">Clique nos botoes de endereço para ir ao mapa!</h4>
-          {modalData.info && modalData.info.map(info => (
-            <h1 className="mb-2 text-center font-bold text-xl">{info}</h1>
+          {modalData.info && modalData.info.map((info, idx) => (
+            <h1 key={idx} className="mb-2 text-center font-bold text-xl">{info}</h1>
           ))}
           <div className="flex flex-col gap-12">
             {modalData.regionals?.length == 0 && (
