@@ -35,52 +35,74 @@ export default function Home() {
   return (
     <main>
       {openModal && (
-        <Modal setOpenModal={setOpenModal} modalData={modalData}/>
+        <Modal setOpenModal={setOpenModal} modalData={modalData} />
       )}
-      <section id='home' className="flex py-12 justify-between gap-12">
-        <div className={`2xl:w-[60vw] xl:w-[55vw] bg-primary p-8 rounded-tr-xl rounded-br-xl flex flex-col justify-center items-center`}>
-          <p className={`${notoSans.variable} text-2xl text-secondary font-bold`}>CONHEÇA SEUS DIREITOS</p>
-          <h1 className="text-8xl text-white font-extrabold scale-x-70 text-center mb-10 mt-3">REDES DE APOIO EM FORTALEZA</h1>
-          <div className="flex gap-3">
-            <Button onClick={() => scrollToSection("sobre")} className="bg-secondary text-white">SAIBA MAIS</Button>
-            <Button onClick={() => scrollToSection("emergencias")} className="bg-secondary text-white">EMERGÊNCIA</Button>
+      <section id='home' className="min-w-screen flex sm:py-0 flex-col sm:flex-row py-12 sm:mt-12 mt-0 justify-between gap-12 mb-12">
+        <div className={`2xl:w-[60vw] lg:w-[55vw] md:w-[55vw] p-4 w-full rounded-none sm:py-8 lg:p-8 md:py-6 bg-primary md:rounded-tr-xl md:rounded-br-xl flex flex-col sm:justify-center sm:items-center`}>
+          <p className={`${notoSans.variable} text-xl md:text-2xl text-secondary font-bold`}>CONHEÇA SEUS DIREITOS</p>
+          <h1 className="lg:text-8xl md:text-7xl text-[4rem] leading-none text-white font-extrabold scale-x-70 origin-left sm:origin-center text-left sm:text-center mb-10 mt-3">
+            REDES DE APOIO EM FORTALEZA
+          </h1>
+          <div className="flex flex-col items-center sm:flex-row gap-3">
+            <Button onClick={() => scrollToSection("sobre")} className="bg-secondary w-[50vw] sm:w-auto text-white">SAIBA MAIS</Button>
+            <Button onClick={() => scrollToSection("emergencias")} className="bg-secondary w-[50vw] sm:w-auto text-white">EMERGÊNCIA</Button>
           </div>
         </div>
-        <div className="mr-24">
+        <div className="sm:mr-4 lg:mr-12 xl:mr-24">
           <Image
             src={Image1}
             alt="Imagem representando redes de apoio"
-            className="rounded-xl w-[500px]"
+            className="rounded-xl w-full p-4 sm:w-[500px] lg:w-[500px]"
             height={200}
           />
         </div>
       </section>
-      <section id='sobre' className="z-10 relative bg-primary p-16 px-60 flex gap-12 items-center">
-        <div>
+      <section
+        id="sobre"
+        className="
+    z-10 relative bg-primary 
+    p-8 md:p-16 
+    px-6 md:px-20 lg:px-40 xl:px-60
+    flex flex-col lg:flex-row 
+    gap-10 lg:gap-12 
+    items-center
+  "
+      >
+        <div className="w-full lg:w-auto flex sm:justify-center">
           <Image
             src={Image2}
             alt="Imagem 2"
-            className='rounded-xl'
-            height={1000}
+            className="rounded-xl w-full max-w-sm lg:max-w-none h-auto"
           />
         </div>
-        <div className="flex flex-col gap-10 text-white itens-center justify-center">
-          <div>
-            <ArrowDownRight size={60} strokeWidth={3} className="text-secondary" />
-            <h2 className="mt-4 font-semibold text-5xl scale-x-75 origin-left">SOBRE O PROJETO</h2>
-          </div>
-          <p className="font-semibold text-2xl">O Pontes de Cuidado nasceu da vontade de aproximar as pessoas dos serviços que podem transformar vidas.</p>
-          <p className="font-semibold text-2xl">Muitas vezes, quem precisa de ajuda não sabe por onde começar. Nosso objetivo é tornar o acesso à informação mais simples e humano, reunindo em um só lugar as principais redes de apoio disponíveis em Fortaleza - Ce.</p>
-          <p className="text-secondary font-semibold text-2xl">Acreditamos que informação também é cuidado. E que cuidar é um ato coletivo.</p>
-        </div>
 
+        <div className="flex flex-col gap-6 text-white items-center lg:items-start sm:justify-center">
+          <div className="text-center lg:text-left">
+            <ArrowDownRight size={50} strokeWidth={3} className="text-secondary mx-auto lg:mx-0" />
+            <h2 className="mt-4 font-semibold text-3xl md:text-4xl lg:text-5xl scale-x-100 lg:scale-x-75 origin-left">
+              SOBRE O PROJETO
+            </h2>
+          </div>
+
+          <p className="font-semibold text-lg md:text-xl lg:text-2xl sm:text-center lg:text-left">
+            O Pontes de Cuidado nasceu da vontade de aproximar as pessoas dos serviços que podem transformar vidas.
+          </p>
+
+          <p className="font-semibold text-lg md:text-xl lg:text-2xl sm:text-center lg:text-left">
+            Muitas vezes, quem precisa de ajuda não sabe por onde começar. Nosso objetivo é tornar o acesso à informação mais simples e humano, reunindo em um só lugar as principais redes de apoio disponíveis em Fortaleza - Ce.
+          </p>
+
+          <p className="text-secondary font-semibold text-lg md:text-xl lg:text-2xl sm:text-center lg:text-left">
+            Acreditamos que informação também é cuidado. E que cuidar é um ato coletivo.
+          </p>
+        </div>
       </section>
       <section id='orgaos' className="max-w-[100vw] overflow-hidden flex flex-col items-center relative py-12">
         <Image
           src={Image4}
           alt="Espiral"
           width={250}
-          className='absolute left-[-100px] top-[-150px] z-0 transform rotate-45'
+          className='absolute left-[-100px] top-[-150px] transform rotate-45'
         />
         <h1 className={`${notoSans} font-extrabold text-3xl text-secondary mb-10`}>ORGÃOS</h1>
         <div className="flex gap-18 justify-center flex-wrap">
@@ -97,70 +119,133 @@ export default function Home() {
           src={Image4}
           alt="Espiral"
           width={250}
-          className='absolute -bottom-20 right-[-100px] z-0'
+          className='absolute -bottom-40 right-[-100px] z-0'
         />
 
       </section>
-      <section id='emergencias' className='relative z-10 bg-primary flex justify-between py-12 px-24 items-center'>
-        <div className='ml-12 w-[30vw]'>
-          <div className='w-[70%] h-full'>
+      <section
+        id="emergencias"
+        className="
+    relative z-10 bg-primary 
+    flex flex-col lg:flex-row 
+    justify-between 
+    items-center
+    gap-10
+    py-12 
+    px-6 md:px-12 lg:px-24
+  "
+      >
+        {/* IMAGEM */}
+        <div className="w-full lg:w-[35%] flex justify-center lg:justify-start">
+          <div className="w-full max-w-sm lg:max-w-none">
             <Image
               src={Image3}
               alt="Imagem 3"
-              className='rounded-xl'
-              height={500}
+              className="rounded-xl w-full h-auto"
             />
           </div>
         </div>
-        <div className='w-[55vw] bg-tertiary rounded-2xl p-12 flex flex-col'>
-          <h2 className='font-extrabold scale-x-75 origin-left text-4xl mb-4'>EMERGÊNCIAS</h2>
-          <p className='mb-6 text-lg'>Situações de crise acontecem de forma inesperada e nesses momentos é essencial saber a quem recorrer rapidamente. Aqui reunimos canais de emergência e
-            atendimento imediato para casos de violência, risco à vida, crises emocionais e outros tipos de urgência.</p>
-          <p className='mb-6 text-lg'>Guarde esses números e compartilhe com pessoas próximas. Eles podem <strong>salvar vidas!</strong></p>
-          <h3 className='text-lg font-bold mb-2'>NÚMEROS IMPORTANTES</h3>
-          <ul className='ml-5 list-disc'>
-            <li className='font-normal'>CVV (apoio emocional): <strong>188</strong></li>
-            <li className='font-normal'>Central de Atendimento à Mulher: <strong>180</strong></li>
-            <li className='font-normal'>Disque Direitos Humanos / Criança, Idoso e LGBTQIA+: <strong>100</strong></li>
-            <li className='font-normal'>Polícia Militar: <strong>190</strong></li>
-            <li className='font-normal'>SAMU (urgências médicas): <strong>192</strong></li>
-            <li className='font-normal'>Corpo de Bombeiros: <strong>193</strong></li>
-            <li className='font-normal'>Casa da Mulher Brasileira – Fortaleza: <strong>(85) 3108-2999</strong></li>
+
+        {/* TEXTO */}
+        <div
+          className="
+      w-full lg:w-[60%]
+      bg-tertiary rounded-2xl 
+      p-6 md:p-10 lg:p-12
+      flex flex-col
+    "
+        >
+          <h2 className="font-extrabold scale-x-100 lg:scale-x-75 origin-left text-3xl md:text-4xl mb-4">
+            EMERGÊNCIAS
+          </h2>
+
+          <p className="mb-6 text-base md:text-lg">
+            Situações de crise acontecem de forma inesperada e nesses momentos é essencial saber a quem recorrer rapidamente. Aqui reunimos canais de emergência e
+            atendimento imediato para casos de violência, risco à vida, crises emocionais e outros tipos de urgência.
+          </p>
+
+          <p className="mb-6 text-base md:text-lg">
+            Guarde esses números e compartilhe com pessoas próximas. Eles podem <strong>salvar vidas!</strong>
+          </p>
+
+          <h3 className="text-base md:text-lg font-bold mb-2">NÚMEROS IMPORTANTES</h3>
+
+          <ul className="ml-5 list-disc text-base md:text-lg">
+            <li className="">CVV (apoio emocional): <strong>188</strong></li>
+            <li className="">Central de Atendimento à Mulher: <strong>180</strong></li>
+            <li className="">Disque Direitos Humanos / Criança, Idoso e LGBTQIA+: <strong>100</strong></li>
+            <li className="">Polícia Militar: <strong>190</strong></li>
+            <li className="">SAMU (urgências médicas): <strong>192</strong></li>
+            <li className="">Corpo de Bombeiros: <strong>193</strong></li>
+            <li className="">
+              Casa da Mulher Brasileira – Fortaleza: <strong>(85) 3108-2999</strong>
+            </li>
           </ul>
         </div>
       </section>
-      <section id='saibamais' className='flex py-12 items-center gap-24'>
+
+      <section id='saibamais' className='flex px-4 sm:px-0 py-12 items-center sm:gap-24 text-center sm:text-left '>
         <div>
           <Image
             src={Image5}
             alt="Pessoa"
-            width={300}
-            className='opacity-20'
+            className='hidden sm:inline-block opacity-20 w-[150px] sm:w-[300px]'
           />
         </div>
-        <div className='w-[70%]'>
-          <p className='text-2xl mb-8'>Este site foi desenvolvido pelos discentes integrantes do Projeto de Extensão em Responsabilidade Social do Centro Universitário Farias Brito (FB Uni), como parte das atividades voltadas à integração entre ensino, pesquisa e compromisso social.</p>
-          <p className='text-2xl'><strong>Integrantes</strong>: <br />Ana Clara Figueiredo Freire • Francisco Luiz Aguiar da Silva • Júlio César Mesquita Barreto • Lara Louise dos Santos Sales • Riann Carvalho Mota</p>
+        <div className='w-full sm:w-[70%]'>
+          <p className='md:text-2xl mb-8'>Este site foi desenvolvido pelos discentes integrantes do Projeto de Extensão em Responsabilidade Social do Centro Universitário Farias Brito (FB Uni), como parte das atividades voltadas à integração entre ensino, pesquisa e compromisso social.</p>
+          <p className='md:text-2xl'><strong>Integrantes</strong>: <br />Ana Clara Figueiredo Freire • Francisco Luiz Aguiar da Silva • Júlio César Mesquita Barreto • Lara Louise dos Santos Sales • Riann Carvalho Mota</p>
         </div>
       </section>
-      <footer id='footer' className='bg-tertiary py-12 flex justify-center items-center'>
-        <div className='flex justify-around items-center w-[80vw]'>
-          <div>
-            <Image
-              src={Image6}
-              alt="Logo"
-              width={220}
-            />
-          </div>
-          <div>
-            <h1 className='text-7xl font-extrabold scale-x-75 text-center'>ACESSE TAMBÉM A CARTILHA DIGITAL</h1>
-          </div>
-          <div className='flex flex-col gap-4'>
-            <Button className='bg-quartiary font-semibold py-4 w-72'>ABRIR A CARTILHA DIGITAL</Button>
-            <Button className='bg-quartiary font-semibold py-4 w-72'>AVALIE O SITE</Button>
-          </div>
-        </div>
-      </footer>
+<footer
+  id="footer"
+  className="
+    bg-tertiary 
+    py-12 
+    flex 
+    justify-center 
+    items-center
+  "
+>
+  <div
+    className="
+      flex 
+      flex-col lg:flex-row 
+      justify-between 
+      items-center 
+      gap-10 lg:gap-20 
+      w-full max-w-7xl 
+      px-6
+    "
+  >
+    {/* LOGO */}
+    <div className="flex justify-center lg:justify-start">
+      <Image
+        src={Image6}
+        alt="Logo"
+        width={180}
+        className="w-40 md:w-52 lg:w-[220px]"
+      />
+    </div>
+
+    {/* TEXTO CENTRAL */}
+    <div className="text-center lg:text-left">
+      <h1 className="font-extrabold scale-x-100 lg:scale-x-75 text-3xl md:text-5xl lg:text-7xl">
+        ACESSE TAMBÉM A CARTILHA DIGITAL
+      </h1>
+    </div>
+
+    {/* BOTÕES */}
+    <div className="flex flex-col gap-4 w-full max-w-xs lg:w-auto">
+      <Button className="bg-quartiary font-semibold py-4 w-full">
+        ABRIR A CARTILHA DIGITAL
+      </Button>
+      <Button className="bg-quartiary font-semibold py-4 w-full">
+        AVALIE O SITE
+      </Button>
+    </div>
+  </div>
+</footer>
     </main>
   );
 }
