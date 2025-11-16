@@ -240,9 +240,9 @@ export default function Home() {
       <Button className="bg-quartiary font-semibold py-4 w-full">
         ABRIR A CARTILHA DIGITAL
       </Button>
-      <Button className="bg-quartiary font-semibold py-4 w-full">
+      <a href="https://forms.gle/vW5i4HUVWMVziTu79" className="bg-quartiary font-semibold py-4 w-full cursor-pointer px-6 rounded-4xl text-center">
         AVALIE O SITE
-      </Button>
+      </a>
     </div>
   </div>
 </footer>
