@@ -6,6 +6,8 @@ import Image3 from './images/imagem2.png'
 import Image4 from './images/imagem3.png'
 import Image5 from './images/imagem4.png'
 import Image6 from './images/imagem5.png'
+import IconIG from './images/instaFBICON.png'
+import IconMail from './images/emailICON.png'
 import { Noto_Sans } from "next/font/google";
 import Button from "./components/Button";
 import Card from "./components/Card";
@@ -53,7 +55,6 @@ export default function Home() {
             src={Image1}
             alt="Imagem representando redes de apoio"
             className="rounded-xl w-full p-4 sm:w-[500px] lg:w-[500px]"
-            height={200}
           />
         </div>
       </section>
@@ -68,11 +69,11 @@ export default function Home() {
     items-center
   "
       >
-        <div className="w-full lg:w-auto flex sm:justify-center">
+        <div className="sm:mr-4 lg:mr-12 xl:mr-24">
           <Image
             src={Image2}
             alt="Imagem 2"
-            className="rounded-xl w-full max-w-sm lg:max-w-none h-auto"
+            className="rounded-xl w-full h-full"
           />
         </div>
 
@@ -197,18 +198,18 @@ export default function Home() {
           <p className='md:text-2xl'><strong>Integrantes</strong>: <br />Ana Clara Figueiredo Freire • Francisco Luiz Aguiar da Silva • Júlio César Mesquita Barreto • Lara Louise dos Santos Sales • Riann Carvalho Mota</p>
         </div>
       </section>
-<footer
-  id="footer"
-  className="
+      <footer
+        id="footer"
+        className="
     bg-tertiary 
     py-12 
     flex 
     justify-center 
     items-center
   "
->
-  <div
-    className="
+      >
+        <div
+          className="
       flex 
       flex-col lg:flex-row 
       justify-between 
@@ -217,35 +218,65 @@ export default function Home() {
       w-full max-w-7xl 
       px-6
     "
-  >
-    {/* LOGO */}
-    <div className="flex justify-center lg:justify-start">
-      <Image
-        src={Image6}
-        alt="Logo"
-        width={180}
-        className="w-40 md:w-52 lg:w-[220px]"
-      />
-    </div>
+        >
+          {/* LOGO */}
+          <div className="flex justify-center lg:justify-start">
+            <Image
+              src={Image6}
+              alt="Logo"
+              width={180}
+              className="w-10 md:w-52 lg:w-[220px]"
+            />
+          </div>
 
-    {/* TEXTO CENTRAL */}
-    <div className="text-center lg:text-left">
-      <h1 className="font-extrabold scale-x-100 lg:scale-x-75 text-3xl md:text-5xl lg:text-7xl">
-        ACESSE TAMBÉM A CARTILHA DIGITAL
-      </h1>
-    </div>
+          {/* TEXTO CENTRAL */}
+          <div className="text-center lg:text-left">
+            <h1 className="font-extrabold scale-x-100 lg:scale-x-75 text-3xl md:text-5xl lg:text-7xl">
+              ACESSE TAMBÉM A CARTILHA DIGITAL
+            </h1>
+          </div>
 
-    {/* BOTÕES */}
-    <div className="flex flex-col gap-4 w-full max-w-xs lg:w-auto">
-      <Button className="bg-quartiary font-semibold py-4 w-full">
-        ABRIR A CARTILHA DIGITAL
-      </Button>
-      <a href="https://forms.gle/vW5i4HUVWMVziTu79" className="bg-quartiary font-semibold py-4 w-full cursor-pointer px-6 rounded-4xl text-center">
-        AVALIE O SITE
-      </a>
-    </div>
-  </div>
-</footer>
+          {/* BOTÕES */}
+          <div className="flex flex-col gap-4 w-full max-w-xs lg:w-auto">
+            <a href="https://drive.google.com/drive/folders/1WcosUJL31tjpXqo-uJA7AzrC71067X2h" target="_blank" className="bg-quartiary font-semibold py-4 w-full cursor-pointer px-6 rounded-4xl text-center">
+              ABRIR A CARTILHA DIGITAL
+            </a>
+            <a href="https://forms.gle/vW5i4HUVWMVziTu79" target="_blank" className="bg-quartiary font-semibold py-4 w-full cursor-pointer px-6 rounded-4xl text-center">
+              AVALIE O SITE
+            </a>
+            <div className="flex flex-wrap gap-3">
+              <h2 className=" font-bold text-center">
+                Formas de contato
+                :
+
+              </h2>
+              <a title="Clique aqui para nos enviar um e-mail" className=" font-semibold text-center" href="mailto:pontesdecuidado@gmail.com" target="_blank" >
+
+                <Image
+                  src={IconMail}
+                  alt="ícone instagram"
+                  height={55}
+                  className=''
+                />
+                E-mail:
+                pontesdecuidado@gmail.com
+
+
+              </a>
+              <a title="Clique aqui para acessar nosso Instagram" className=" font-semibold text-center" href="https://www.instagram.com/pontesdecuidado" placeholder="clique " target="_blank">
+                <Image
+                  src={IconIG}
+                  alt="ícone e-mail"
+                  height={35}
+                  className='ml-2 mb-2'
+                />
+                Instagram:
+                @pontesdecuidado
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
     </main>
   );
 }
