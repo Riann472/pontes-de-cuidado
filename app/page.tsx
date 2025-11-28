@@ -225,7 +225,7 @@ export default function Home() {
               src={Image6}
               alt="Logo"
               width={180}
-              className="w-10 md:w-52 lg:w-[220px]"
+              className="w-32 md:w-52 lg:w-[220px]"
             />
           </div>
 
