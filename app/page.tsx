@@ -263,7 +263,7 @@ export default function Home() {
 
 
               </a>
-              <a title="Clique aqui para acessar nosso Instagram" className=" font-semibold text-center" href="https://www.instagram.com/pontesdecuidado" placeholder="clique " target="_blank">
+              <a title="Clique aqui para acessar nosso Instagram" className=" font-semibold text-center" href="https://www.instagram.com/pontesdecuidado" target="_blank">
                 <Image
                   src={IconIG}
                   alt="ícone e-mail"
